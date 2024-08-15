@@ -1,5 +1,5 @@
 
-# Project Title
+# Bergsma Servers
 
 Welcome to the Bergsma Servers Official Repository. Here, you will find all the code used in the Bergsma Servers site. If you have any bugs or issues you'd like to share, as well as suggested games to add please create an issue.
 
