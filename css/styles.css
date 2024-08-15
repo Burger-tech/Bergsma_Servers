@@ -1,0 +1,53 @@
+body { background-color: lightblue;
+
+}
+
+h1 { background-color: green;
+opacity: 0.6;
+}
+
+h2 { background-color: lightgray;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+ul li {
+  display: table-cell;
+  width: auto;
+  text-align: center;
+}
+
+
+iframe {
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+}
+
+togglebutton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px;
+  background-color: orange;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: cursive;
+  user-select: none;
+}
+
+
