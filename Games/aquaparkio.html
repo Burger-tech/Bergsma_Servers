@@ -1,0 +1,41 @@
+
+<head>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+
+<b>
+<h2>
+<div>
+<ul>
+
+<li><a href="../index.html">Home</a></li>
+<li><a href="../Help.html">Help</a></li>
+<li><a href="../Games.html">Games</a></li>
+
+
+</ul>
+</div>
+</h2>
+
+
+  <button id= "togglebutton" onclick="goFullscreen('iframe'); return false">Fullscreen</button>
+ 
+<script>
+function goFullscreen(id) {
+    var element = document.getElementById(id);
+    if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullScreen) {
+      element.webkitRequestFullScreen();
+    }
+}
+</script>
+
+
+<h5>
+aquapark.io
+</h5>
+<iframe id= "iframe" src="https://aquapark.io" width="1000" height="600" allowfullscreen > </iframe>
+  
+</b>
