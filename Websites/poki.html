@@ -1,0 +1,101 @@
+<head>
+    <link rel="stylesheet" href="../css/styles.css">
+    
+        <style>
+    
+          
+            #favorite-button {
+                background-color: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
+                color: black;
+                border: none;
+                padding: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+    
+            #favorite-button:hover {
+                background-color: #ffaa00;
+            }
+        </style>
+    
+    </head>
+    
+    
+    
+    
+    <script>
+        // Check if the user is logged in
+        const token = localStorage.getItem("token");
+    
+        // Show the 'Favorite' button only if the user is logged in
+        if (!token) {
+            document.getElementById("favorite-button").style.display = "none";
+        }
+    
+        function addFavorite() {
+            const gameName = document.getElementById("game-name").textContent; // Get the game name
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || []; // Get favorites from localStorage
+    
+            // Check if the game is already favorited
+            if (!favorites.includes(gameName)) {
+                favorites.push(gameName); // Add the game to favorites
+                localStorage.setItem("favorites", JSON.stringify(favorites)); // Save to localStorage
+                alert(`${gameName} added to favorites!`);
+            } else {
+                alert(`${gameName} is already in your favorites.`);
+            }
+        }
+    </script>
+    
+    <b>
+    <h2 style="border-radius: 10px;">
+    <div>
+    <ul>
+    
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../Help.html">Help</a></li>
+    <li><a href="../Games.html">Games</a></li>
+    
+    
+    </ul>
+    </div>
+    </h2>
+    
+    <style>
+      .fullscreenbutton {
+    color: white;
+    background: darkblue;
+    font-family: verdana;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 5px solid black;
+    
+    }
+    </style>
+      
+    
+      <button class = "fullscreenbutton" id= "togglebutton" onclick="goFullscreen('iframe'); return false">Fullscreen</button>
+     
+    <script>
+    function goFullscreen(id) {
+        var element = document.getElementById(id);
+        if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullScreen) {
+          element.webkitRequestFullScreen();
+        }
+    }
+    </script>
+    
+    
+    <h5 id="game-name">
+    Poki.com
+    </h5>
+    <iframe id= "iframe" src="https://poki-proxy.bergsma-tyler.workers.dev/" width="1000" height="600" allowfullscreen > </iframe>
+    <br>
+    <button id="favorite-button" onclick="addFavorite()">Add to Favorites</button>
+      
+    </b>
+    
