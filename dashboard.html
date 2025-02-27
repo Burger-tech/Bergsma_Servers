@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css/styles.css">    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    .container { width: 300px; margin: auto; }
+    #favorites-list { list-style-type: none; padding: 0; }
+    #favorites-list li { margin: 5px 0; }
+    .logout-button {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+    }
+    .logout-button:hover {
+        background-color: darkred;
+    }
+
+
+</style>
+</head>
+<body>
+
+<h2 style="border-radius: 10px;">
+<!-- Top Bar (same as game page) -->
+<div class="top-bar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Help.html">Help</a></li>
+        <li><a href="../Games.html">Games</a></li>
+    </ul>
+</div>
+  </h2>
+<div class="container">
+    <h2>Welcome to the Dashboard</h2>
+    <p id="user-info"></p>
+
+    <h3>Your Favorite Games:</h3>
+    <ul id="favorites-list"></ul>
+
+    <button class="logout-button" onclick="logout()">Logout</button>
+</div>
+
+<script>
+    // Check if the user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+        window.location.href = "index.html";
+    } else {
+        const username = localStorage.getItem("username");
+        document.getElementById("user-info").textContent = `Hello, ${username}!`;
+
+        // Get the list of favorited games from localStorage
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+        // Display the list of favorites
+        const favoritesList = document.getElementById("favorites-list");
+        if (favorites.length > 0) {
+            favorites.forEach(game => {
+                const listItem = document.createElement("li");
+                listItem.textContent = game;
+                favoritesList.appendChild(listItem);
+            });
+        } else {
+            favoritesList.innerHTML = "<li>No favorites yet</li>";
+        }
+    }
+
+    function logout() {
+        // Keep favorites in localStorage, only remove token and username
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>

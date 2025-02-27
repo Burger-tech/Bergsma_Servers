@@ -1,25 +1,33 @@
 
+
+fullscreenbutton {
+color: red;
+	}
+
+
 p6 { font-size: 30px;
 color: red;
 text-decoration: underline;
 
-   }
+}
 
+div {
+   border-radius: 10px; 
+}
 
 
 p5 { font-size: 15px;
 
    }
 
-body { background-color: aquamarine;
-
+body { background-image: linear-gradient(90deg, #89f7fe 0%, #66a6ff 100%)
 }
 
 h1 { background-color: lightgray;
 opacity: 0.6;
 }
 
-h2 { background-color: lightblue;
+h2 { background-color: #3b8ae4;
 
 }
 
@@ -61,5 +69,4 @@ togglebutton {
   font-family: cursive;
   user-select: none;
 }
-
 

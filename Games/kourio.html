@@ -4,7 +4,7 @@
 
 
 <b>
-<h2>
+<h2 style="border-radius: 10px;">
 <div>
 <ul>
 
@@ -17,8 +17,20 @@
 </div>
 </h2>
 
+<style>
+  .fullscreenbutton {
+color: white;
+background: darkblue;
+font-family: verdana;
+font-size: 20px;
+border-radius: 10px;
+padding: 5px 10px;
+border: 5px solid black;
 
-  <button id= "togglebutton" onclick="goFullscreen('iframe'); return false">Fullscreen</button>
+}
+</style>
+
+  <button class= "fullscreenbutton" id= "togglebutton" onclick="goFullscreen('iframe'); return false">Fullscreen</button>
  
 <script>
 function goFullscreen(id) {
