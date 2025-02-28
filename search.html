@@ -1,0 +1,96 @@
+<html>
+
+<title>
+BurgerNet
+</title>
+<body>
+<head>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+</head>
+  
+<style>
+/* #top-bar {
+  border-radius: 10px;
+  background-color: black;
+  width: 30px;
+  } */
+  
+  
+  
+</style>
+
+<h2 style="border-radius: 10px;">
+<div>
+<ul>
+
+<li id="top-bar"><a href="index.html">Home</a></li>
+<li id="top-bar"><a href="Help.html">Help</a></li>
+<li id="top-bar"><a href="Games.html">Games</a></li>
+<li id="top-bar"><a href="signup.html">Login/Signup</a></li>
+<li id="top-bar"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf4EkT1uQL3Z8C-cTgye38xCrNZMLPxFhzQutnVea6wxLyUGQ/viewform?usp=header  
+">Feedback</a></li>
+
+  
+</ul>
+</div>
+</h2>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Search via Proxy</title>
+  <style>
+    .search-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background: #007BFF;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    input[type="submit"]:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <h1>Search</h1>
+    <form id="searchForm">
+      <input type="text" id="searchQuery" placeholder="Enter your search query..." required>
+      <input type="submit" value="Search">
+    </form>
+  </div>
+  <script>
+    document.getElementById("searchForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var query = document.getElementById("searchQuery").value.trim();
+      if(query) {
+        // Redirect to the worker proxy with the search query parameter "q"
+        window.location.href = "https://google-proxy.bergsma-tyler.workers.dev/?q=" + encodeURIComponent(query);
+      }
+    });
+  </script>
+</body>
+</html>
+
